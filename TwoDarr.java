@@ -1,6 +1,6 @@
 package JAVA;
 import java.util.*;
-public class TowDarr {
+public class TwoDarr {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
