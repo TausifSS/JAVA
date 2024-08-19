@@ -1,6 +1,6 @@
 package JAVA;
 import java.util.*;
-public class Queue{
+public class Queue_Arr{
     static class queue{
         static int arr[];
         static int size;
