@@ -1,41 +1,63 @@
 package JAVA.Collection_Framework;
+
 import java.util.*;
+
 public class StackinAist {
-    static class Stack{
-        static ArrayList<Integer>list=new ArrayList<>();
-        public static boolean isEmpty(){
+
+    // Custom Stack class using ArrayList as the underlying data structure
+    static class Stack {
+        // ArrayList to store stack elements
+        static ArrayList<Integer> list = new ArrayList<>();
+
+        // Method to check if the stack is empty
+        public static boolean isEmpty() {
             return list.size() == 0;
         }
-        public static void push(int data){
-            list.add(data);
+
+        // Method to push an element onto the stack
+        public static void push(int data) {
+            list.add(data); // Add the element to the end of the list
         }
-        public static int pop(){
-            if (isEmpty()){
+
+        // Method to pop an element from the stack
+        public static int pop() {
+            // If the stack is empty, return -1 (or you could throw an exception)
+            if (isEmpty()) {
                 return -1;
             }
-            int top=list.get(list.size()-1);
-            list.remove(list.size()-1);
+
+            // Get the top element of the stack (the last element in the list)
+            int top = list.get(list.size() - 1);
+            // Remove the top element from the stack
+            list.remove(list.size() - 1);
             return top;
         }
-        public static int peek(){
-            if (isEmpty()){
-                return -1;}
-                return  list.get(list.size()-1);
 
+        // Method to peek at the top element of the stack without removing it
+        public static int peek() {
+            // If the stack is empty, return -1 (or you could throw an exception)
+            if (isEmpty()) {
+                return -1;
+            }
+            // Return the top element of the stack
+            return list.get(list.size() - 1);
         }
     }
+
     public static void main(String[] args) {
-        Stack S=new Stack();
+        // Create a new instance of the Stack
+        Stack S = new Stack();
+
+        // Push elements onto the stack
         S.push(11);
         S.push(12);
         S.push(13);
         S.push(14);
-        while(!S.isEmpty()) {
-            System.out.println(S.peek());
-            S.pop();
 
+        // While the stack is not empty, pop and print each element
+        while (!S.isEmpty()) {
+            System.out.println(S.peek()); // Print the top element
+            S.pop(); // Remove the top element
         }
-
-        }
+    }
 }
- 
